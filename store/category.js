@@ -16,7 +16,7 @@ export const actions = {
   async getCategoryData({ commit }) {
     await this.$axios
       .$get(
-        `${process.env.STORE_API}/products/categories`,
+        `${this.$config.STORE_API}/products/categories`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const actions = {
   async getCategoryProductsData({ commit }, payload) {
     await this.$axios
       .$get(
-        `${process.env.STORE_API}/products/category/${payload}`,
+        `${this.$config.STORE_API}/products/category/${payload}`,
         {
           headers: {
             'Content-Type': 'application/json',
