@@ -1,8 +1,12 @@
 <template>
   <div :id="singleProduct.id">
-    <img :src="singleProduct.image" :alt="singleProduct.title" width="250" class="ma-auto d-flex">
-    <h1 class="my-3">{{ singleProduct.title }}</h1>
-    <span class="rating-border">
+    <v-row class="my-10">
+      <v-col col="4">
+        <img :src="singleProduct.image" :alt="singleProduct.title" width="300" class="ma-auto d-flex">
+      </v-col>
+      <v-col col="8">
+        <h1 class="my-3">{{ singleProduct.title }}</h1>
+        <span class="rating-border">
       <v-icon
         color="yellow darken-2"
         class="mb-1"
@@ -11,23 +15,27 @@
         </v-icon>
         {{singleProduct.rating.rate}}
     </span>
-    <p class="ml-3 d-inline">
-      ( {{singleProduct.rating.count}} ratings )
-    </p>
-    <h2 class="mt-5">${{singleProduct.price}}</h2>
-    <h3>Description</h3>
-    <p>
-      {{singleProduct.description}}
-    </p>
-    <v-btn
-      block
-      x-large
-      color="deep-orange lighten-1"
-      class="white--text"
-    >
-      <v-icon class="white--text mr-2">mdi-cart-plus</v-icon>
-      Add to cart
-    </v-btn>
+        <p class="ml-3 d-inline">
+          ( {{singleProduct.rating.count}} ratings )
+        </p>
+        <h2 class="mt-5">${{singleProduct.price}}</h2>
+        <h3>Description</h3>
+        <p>
+          {{singleProduct.description}}
+        </p>
+        <v-btn
+            block
+            x-large
+            color="deep-orange lighten-1"
+            class="white--text"
+        >
+          <v-icon class="white--text mr-2">mdi-cart-plus</v-icon>
+          Add to cart
+        </v-btn>
+      </v-col>
+    </v-row>
+
+
   </div>
 </template>
 
